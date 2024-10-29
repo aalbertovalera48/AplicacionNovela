@@ -1,4 +1,4 @@
-# Aplicación de Gestión de Novelas Actualizada - Alberto Valera
+# Aplicación de Gestión de Novelas con Almacenamiento de Datos del Usuario - Alberto Valera
 
 **Link al Repositorio:** https://github.com/aalbertovalera48/AplicacionNovelaActualizada.git
 
