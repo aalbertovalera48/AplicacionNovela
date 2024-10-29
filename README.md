@@ -171,5 +171,3 @@ Este proyecto es una base sólida para la creación de aplicaciones Android más
 - Integración de APIs externas para enriquecer la experiencia del usuario, como recomendaciones de novelas.
 - Desarrollo de una versión web o multiplataforma para ampliar el acceso a la aplicación.
 
-### Nota
-El código se encuentra en constante desarrollo y mejora. Agradezco cualquier sugerencia o comentario que pueda ayudar a mejorar la aplicación. ¡Disfruta de la gestión de tus novelas!
