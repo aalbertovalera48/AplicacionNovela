@@ -1,8 +1,8 @@
 # Aplicación de Gestión de Novelas con Almacenamiento de Datos del Usuario - Alberto Valera
 
-**Link al Repositorio:** https://github.com/aalbertovalera48/AplicacionNovelaActualizada.git
+**Link al Repositorio:** https://github.com/aalbertovalera48/Tarea3_Gestion_Novelas_Almacenamiento_Datos_Usuario.git
 
-**Link a la base de datos Firebase:** https://console.firebase.google.com/project/gestion-de-novelas-actualizado/database/gestion-de-novelas-actualizado-default-rtdb/data/~2F?hl=es-419
+**Link a la base de datos Firebase:** https://gestion-de-novelas-actualizado-default-rtdb.firebaseio.com/
 
 ## Objetivo
 
