@@ -6,14 +6,18 @@
 
 ## Objetivo
 
-El objetivo del proyecto es extender la funcionalidad de la práctica anterior "Gestión Novelas". Se busca conectar el código fuente con una base de datos de Firebase e implementar mecanismos de sincronización en segundo plano, permitiendo a los usuarios gestionar su biblioteca de novelas de manera más eficiente y accesible.
+El objetivo de este ejercicio es ampliar la funcionalidad de la aplicación Android desarrollada en los Ejercicios de Feedback 1 y 2 para incluir el almacenamiento de datos del usuario. Los estudiantes aprenderán a utilizar SharedPreferences, almacenamiento interno y externo, y la base de datos SQLite para almacenar y gestionar datos de usuario.
+
 
 ## Características Principales
 
-- **Interfaz de usuario amigable:** Diseño intuitivo que permite una fácil navegación y gestión de novelas.
-- **Sincronización en tiempo real:** Actualizaciones automáticas de la lista de novelas utilizando Firebase.
-- **Gestión de favoritos:** Permite a los usuarios marcar novelas como favoritas y gestionarlas de forma sencilla.
-- **Notificaciones programadas:** Utiliza `AlarmManager` para recordar a los usuarios sobre sus novelas.
+- **Almacenamiento de Preferencias del Usuario:** Utilizar SharedPreferences para guardar configuraciones del usuario, como el tema de la aplicación (claro/oscuro) y preferencias de visualización.
+- **Almacenamiento Interno y Externo:** Implementar el almacenamiento de datos de usuario utilizando tanto almacenamiento interno como externo, dependiendo del tipo de datos.
+- **Base de Datos Firebase:** Utilizar Firebase para almacenar y gestionar los datos de las novelas, permitiendo la persistencia de datos estructurados.
+- **Configuración de la Aplicación:** Permitir al usuario configurar opciones de la aplicación a través de una pantalla de ajustes, incluyendo la opción de realizar copias de seguridad y restaurar datos desde 
+ el almacenamiento externo.
+- **Interfaz de Usuario:** La interfaz debe ser intuitiva y fácil de usar. Utilizar vistas y layouts apropiados para organizar los elementos de la interfaz de usuario.
+
 
 ## Funcionalidades de la Aplicación
 
@@ -35,6 +39,16 @@ El objetivo del proyecto es extender la funcionalidad de la práctica anterior "
 4. **Notificaciones Programadas:**
    - Utiliza `AlarmManager` para programar recordatorios sobre las novelas.
    - Permite que los usuarios reciban alertas relacionadas con sus novelas favoritas.
+  
+5. **Pantalla Login y Registro:**
+   - Utiliza la extensión Authentication de Firebase para añadir y agregar usuarios y controlar sus propiedades y credenciales.
+   - Permite que los usuarios se registren y permite que hagan login.
+
+6. **Pantalla SettingsActivity:**
+   - Pantalla de configuración para controlar el tema de la aplicación, que puede ser lighttheme o darktheme.
+   - Pantalla para guardar los ajustes de cada usuario con su tema preferido y sus datos externos.
+  
+
 
 ## Clases y Actividades
 
@@ -73,6 +87,25 @@ El objetivo del proyecto es extender la funcionalidad de la práctica anterior "
 8. **SyncTask:** 
    - Clase que extiende `AsyncTask` para realizar tareas de sincronización de datos en segundo plano.
    - Permite que la aplicación realice operaciones de red sin bloquear la interfaz de usuario.
+  
+9. **LoginActivity:**
+   - Permite a los usuarios iniciar sesión mediante Firebase Authentication.
+   - loginUser(): Autentica al usuario utilizando el correo electrónico y contraseña.
+  
+10. **RegisterActivity:**
+   - Permite a los nuevos usuarios registrarse en la aplicación mediante Firebase Authentication.
+   - registerUser(): Registra al usuario y lo redirige a la pantalla principal.
+  
+11. **SettingsActivity:**
+   - Proporciona una pantalla de configuración con opciones de tema (modo claro/oscuro), respaldo y restauración de datos.
+   - themeSwitch: Activa o desactiva el modo oscuro.
+   - saveButton: Permite al usuario guardar un respaldo de los datos.
+   - backupButton y restoreButton: Gestión de respaldo y restauración.
+
+12. **FileHelper:**
+   - Clase auxiliar para la lectura y escritura de archivos, que permite guardar datos en almacenamiento interno o externo.
+   - writeToFile(): Guarda texto en un archivo especificado.
+   - readFromFile(): Lee datos de un archivo específico.
 
 ## Estructura del Código
 
@@ -104,7 +137,7 @@ El modelo de datos de la novela incluye propiedades como:
 Se utiliza **NavController** para la navegación entre pantallas. Los estados de la lista de novelas y las reseñas se gestionan mediante `remember` y `mutableStateListOf`, lo que permite una administración eficiente y reactiva del estado.
 
 ## Integración con Firebase
-La aplicación utiliza Firebase como base de datos para almacenar las novelas. Se han añadido 20 novelas de ejemplo para probar la aplicación. `FirebaseHelper` gestiona todas las operaciones relacionadas con la base de datos, permitiendo que las novelas se sincronicen y persistan a través de diferentes sesiones de la aplicación.
+La aplicación utiliza Firebase como base de datos para almacenar las novelas. Se han añadido 10 novelas de ejemplo para probar la aplicación. `FirebaseHelper` gestiona todas las operaciones relacionadas con la base de datos, permitiendo que las novelas se sincronicen y persistan a través de diferentes sesiones de la aplicación.
 
 ## Archivos XML
 
@@ -146,8 +179,17 @@ La aplicación utiliza Firebase como base de datos para almacenar las novelas. S
 10. **notification_icon.xml:** 
     - Icono utilizado en las notificaciones de la aplicación.
 
-11. **circular_background_sync.xml:** 
-    - Diseño de fondo utilizado durante las operaciones de sincronización.
+11. **activity_register.xml:** 
+    - Diseño utilizado para el registro de usuario.
+
+11. **activity_login.xml:** 
+    -cDiseño utilizado para el login de usuario.
+   
+12. **activity_settings.xml:** 
+    - Diseño para la configuración del tema de la aplicación y el guardado de datos del usuario.
+
+11. **ic_settings.xml:** 
+    - Icono utilizado para ir a la pantalla de configuración.
 
 ## Requisitos
 
@@ -164,6 +206,10 @@ La aplicación de gestión de novelas no solo consolida conocimientos clave en e
 - **Gestión del Estado:** El manejo de listas y estados con `remember` y `mutableStateListOf` ha sido crucial para mantener la aplicación actualizada de manera eficiente.
 - **Integración de Firebase:** Comprensión de cómo conectar la aplicación con una base de datos en la nube para la persistencia y sincronización de datos.
 - **Notificaciones Programadas:** Desarrollo de habilidades para utilizar `AlarmManager` para gestionar recordatorios y alertas.
+- **Almacenamiento de Preferencias del Usuario:** Implementación de un guardado de datos eficaz entre aplicación y Firebase usando SharePreferences.
+- **Almacenamiento Interno y Externo:** Implementación del almacenamiento de datos de usuario utilizando tanto almacenamiento interno como externo, dependiendo del tipo de datos.
+- **Configuración de la Aplicación:** Permitir al usuario configurar opciones de la aplicación a través de una pantalla de ajustes, incluyendo la opción de realizar copias de seguridad y restaurar datos desde el almacenamiento externo.
+- **Interfaz de Usuario:** La interfaz debe ser intuitiva y fácil de usar. Utilizar vistas y layouts apropiados para organizar los elementos de la interfaz de usuario
 
 ## Implicaciones Futuras
 Este proyecto es una base sólida para la creación de aplicaciones Android más complejas. En el futuro, se podrían implementar características adicionales, como:
